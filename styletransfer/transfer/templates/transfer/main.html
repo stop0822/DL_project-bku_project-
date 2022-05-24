@@ -15,8 +15,8 @@
 
     <div>
         바꾸고 싶은 이미지를 업로드
-        <form method="post" action="">
-            <input type="file" name="img">
+        <form method="post" action="" enctype="multipart/form-data">
+            <input type="file" name="target_img">
             {% csrf_token %}
 
             <label for="style_img">입힐 스타일</label>
@@ -26,9 +26,8 @@
                 <option value="Rousseau">Rousseau</option>
             </select>
             
-            <button type="submit">변환</button>
+            <button type="submit" value="Transfer">Transfer</button>
         </form>
-
     </div>
 </body>
 </html>
