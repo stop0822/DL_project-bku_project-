@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Image Style Transfer</h1>
-    <div>
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Image Style Transfer</h1>
+<div>
+    
+
+</div>
+
+<div>
+    바꾸고 싶은 이미지를 업로드
+    <form method="post" action="" enctype="multipart/form-data">
+        <input type="file" name="target_img">
+        {% csrf_token %}
+
+        <label for="style_img">입힐 스타일</label>
+        <select name="style_img" id="style_img">
+            <option value="Picasso">Picasso</option>
+            <option value="Manet">Manet</option>
+            <option value="Rousseau">Rousseau</option>
+        </select>
         
-
-    </div>
-
-    <div>
-        바꾸고 싶은 이미지를 업로드
-        <form method="post" action="" enctype="multipart/form-data">
-            <input type="file" name="target_img">
-            {% csrf_token %}
-
-            <label for="style_img">입힐 스타일</label>
-            <select name="style_img" id="style_img">
-                <option value="Picasso">Picasso</option>
-                <option value="Manet">Manet</option>
-                <option value="Rousseau">Rousseau</option>
-            </select>
-            
-            <button type="submit" value="Transfer">Transfer</button>
-        </form>
-    </div>
-</body>
-</html>
+        <button type="submit" value="Transfer">Transfer</button>
+    </form>
+</div>
+{% endblock %}
