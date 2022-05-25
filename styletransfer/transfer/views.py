@@ -6,7 +6,7 @@ from PIL import Image
 from .total_func import crystalize
 from time import localtime
 style_image_base_path = 'transfer/static/img/'
-target_image_base_path = 'transfer/assets/'
+target_image_base_path = 'transfer/static/assets/'
 
 def index(request):
     if request.method == 'POST':
@@ -31,8 +31,20 @@ def index(request):
 
     if request.method == 'GET':
         print(os.getcwd())
-        combination_image = os.listdir('transfer/assets/20225252620' + '/')
+        combination_image = os.listdir('transfer/assets/20225252414' + '/')
         context = {
-                    'combination':combination_image}
+                    'image_list':combination_image}
 
         return render(request,'main.html', context)
+
+
+def result(request):
+
+    combination_image = os.listdir('transfer/static/assets/20225252620' )
+    print(combination_image)
+    base_dir= 'assets/20225252620'
+    context = {
+                    'image_list':[ base_dir + '/' +x for x in combination_image]}
+
+        
+    return render(request,'result.html', context)
