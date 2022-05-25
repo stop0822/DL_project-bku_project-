@@ -8,6 +8,7 @@ import numpy as np
 from keras.applications import vgg19
 from keras import backend as K
 
+import os
 from scipy.optimize import fmin_l_bfgs_b
 import time
 
@@ -104,7 +105,7 @@ class Evaluator(object):
 
     # target_img_path 는 str 형태의 경로
     # style_reference_image_path 는 str 형태의 경로
-def crystallize(target_img_path, style_reference_img_path) :
+def crystalize(target_img_path, style_reference_img_path) :
   
 # '''
 # # def preprocess_image(image_path):
@@ -247,6 +248,7 @@ def crystallize(target_img_path, style_reference_img_path) :
 
     x = preprocess_image(target_image_path)
     x = x.flatten()
+    os.mkdir()
     for i in range(iterations):
         print('반복 횟수 : ', i)
         start_time = time.time()
@@ -263,12 +265,7 @@ def crystallize(target_img_path, style_reference_img_path) :
         print('저장 이미지 : ', fname)
         end_time = time.time()
         print('%d 번째 반복 완료 : %ds' % (i, end_time - start_time))
-        
-        
-    return save_img(fname, img)
 
+  
+    return fname
 
-# target_image_path = './datasets/portrait.png'
-# style_reference_image_path = './datasets/popova.jpg'
-
-crystallize('./datasets/portrait.png', './datasets/popova.jpg')
