@@ -105,7 +105,7 @@ class Evaluator(object):
 
     # target_img_path 는 str 형태의 경로
     # style_reference_image_path 는 str 형태의 경로
-def crystalize(target_img_path, style_reference_img_path) :
+def crystalize(target_img_path, style_reference_img_path, path_prefix) :
   
 # '''
 # # def preprocess_image(image_path):
@@ -248,7 +248,6 @@ def crystalize(target_img_path, style_reference_img_path) :
 
     x = preprocess_image(target_image_path)
     x = x.flatten()
-    os.mkdir()
     for i in range(iterations):
         print('반복 횟수 : ', i)
         start_time = time.time()
@@ -260,12 +259,12 @@ def crystalize(target_img_path, style_reference_img_path) :
         # img = x.copy().reshape((img_height, img_width, 3))
         img = x.copy().reshape((get_height_width(target_image_path, style_reference_image_path)[0], get_height_width(target_image_path, style_reference_image_path)[1], 3))
         img = deprocess_image(img)
-        fname = result_prefix + '_at_iteration_%d.png' % i
-        save_img(fname, img)
+        fname = path_prefix + result_prefix + '_at_iteration_%d.png' % i
+        save_img(fname, img,)
         print('저장 이미지 : ', fname)
         end_time = time.time()
         print('%d 번째 반복 완료 : %ds' % (i, end_time - start_time))
 
   
-    return fname
+    return None
 
