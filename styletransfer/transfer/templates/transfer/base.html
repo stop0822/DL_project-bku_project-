@@ -13,7 +13,8 @@
 		<noscript><link rel="stylesheet" href="{%static 'css/noscript.css'%}" /></noscript>
     </head>
     <body class="is-preload">
-
+        {% block content %}
+	    {% endblock %}
 		<!-- Wrapper-->
 			<div id="wrapper">
 
@@ -53,8 +54,7 @@
 								</p>
 								<section>
 									<div class="row">
-                                        {% block content %}
-			                            {% endblock %}
+                                        
 										<div class="col-4 col-6-medium col-12-small">
 											<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
 										</div>
