@@ -1,5 +1,5 @@
 from PIL import Image
 
 
-picture  = Image.open('transfer/static/img/')
-
+picture  = Image.open('static/img/Manet.jpg')
+picture.show()
