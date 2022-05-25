@@ -1,26 +1,81 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>Image Style Transfer</h1>
-<div>
+<!-- <article id="home" class="panel intro">
+    <header>
+        <h1>Image Style Transfer</h1>
+        <p>Senior Astral Projectionist</p>
+    </header>
+    <a href="#work" class="jumplink pic">
+        <span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+        <img src="images/me.jpg" alt="" />
+    </a>
+</article> -->
+<article id="work" class="panel intro">
+    <header>
+        <br>
+        <br>
+        <h1>Image Style Transfer</h1>
+        <div>
+            <br>
+            바꾸고 싶은 이미지를 업로드
+            <form method="post" action="" enctype="multipart/form-data">
+                
+                        <input type="file" name="target_img" required/>
+                        {% csrf_token %}
+            <div>
+                <div class="row">
+                    <label for="style_img">입힐 스타일</label>
+                    <div class="col-9 col-12-medium">
+                        <select name="style_img" id="style_img">
+                            <option value="Picasso">Picasso</option>
+                            <option value="Manet">Manet</option>
+                            <option value="Rousseau">Rousseau</option>
+                        </select>
+                    </div>
+                    <div class="col-3 col-12-medium">
+                        <button type="submit" value="Transfer">Transfer</button>
+                    </div>
+                </div>
+            </div> 
+            <br>      
+            <p>
+                뉴럴 스타일 트랜스퍼를 이용하여 타깃 이미지의 콘텐츠를 보존하면서 참조 이미지의 스타일을 타깃 이미지에 적용합니다.
+            </p>
+        </form>
+        </div>
+    </header>
     
+    <!-- <article id="contact" class="panel">
+        <header>
+            <h2>Contact Me</h2>
+        </header>
+        <form action="#" method="post">
+            <div>
+                <div class="row">
+                    <div class="col-6 col-12-medium">
+                        <input type="text" name="name" placeholder="Name" />
+                    </div>
+                    <div class="col-6 col-12-medium">
+                        <input type="text" name="email" placeholder="Email" />
+                    </div>
+                    <div class="col-12">
+                        <input type="text" name="subject" placeholder="Subject" />
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" placeholder="Message" rows="6"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <input type="submit" value="Send Message" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </article> -->
+    <!-- <section>
+        <div class="row">
+            
+        </div>
+    </section> -->
+</article>
 
-</div>
-
-<div>
-    바꾸고 싶은 이미지를 업로드
-    <form method="post" action="" enctype="multipart/form-data">
-        <input type="file" name="target_img">
-        {% csrf_token %}
-
-        <label for="style_img">입힐 스타일</label>
-        <select name="style_img" id="style_img">
-            <option value="Picasso">Picasso</option>
-            <option value="Manet">Manet</option>
-            <option value="Rousseau">Rousseau</option>
-        </select>
-        
-        <button type="submit" value="Transfer">Transfer</button>
-    </form>
-</div>
 {% endblock %}
