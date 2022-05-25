@@ -30,7 +30,8 @@ def index(request):
         return render(request,'main.html', context)
 
     if request.method == 'GET':
-        combination_image = os.listdir('assets/' + file_prefix + '/')
+        print(os.getcwd())
+        combination_image = os.listdir('transfer/assets/20225252620' + '/')
         context = {
                     'combination':combination_image}
 
