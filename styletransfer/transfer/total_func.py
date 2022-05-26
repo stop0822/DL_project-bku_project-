@@ -133,7 +133,7 @@ class Evaluator(object):
 # ---------------------------------------------------------
               # target_img_path 는 str 형태의 경로
                                # style_reference_image_path 는 str 형태의 경로
-def crystalize(target_img_path, style_reference_img_path) :
+def crystalize(target_img_path, style_reference_img_path,file_prefix) :
    
     # global 변수 target_image_path, style_reference_image_path 선언
     # 함수에 들어가는 input에는 img
@@ -223,12 +223,12 @@ def crystalize(target_img_path, style_reference_img_path) :
         img = deprocess_image(img)
         
         # fname은 file name 이다.
-        fname = result_prefix + '_at_iteration_%d.png' % i
+        fname = file_prefix + result_prefix + '_at_iteration_%d.png' % i
         save_img(fname, img)
         print('저장 이미지 : ', fname)
         end_time = time.time()
         print('%d 번째 반복 완료 : %ds' % (i, end_time - start_time))
         
-    return save_img(fname, img)
+    return None
 
 # ----------------------------------------------------------------------------------
