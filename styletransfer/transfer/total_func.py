@@ -232,6 +232,3 @@ def crystallize(target_img_path, style_reference_img_path) :
     return save_img(fname, img)
 
 # ----------------------------------------------------------------------------------
-
-# 함수 사용해서 스타일 적용 시키기
-crystallize('./datasets/portrait.png', './datasets/popova.jpg')

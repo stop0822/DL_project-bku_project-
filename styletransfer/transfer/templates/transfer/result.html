@@ -10,7 +10,10 @@
 <body>
 
     {% for image in image_list %}
+
         <div>
+            {{image}}
+            <br>
             <img src="{% static image %}" alt="">
         </div>
     {% endfor %}
