@@ -114,7 +114,6 @@ class Evaluator(object):
         
     def loss(self, x):
         assert self.loss_value is None
-        # x = x.reshape((1, img_height, img_width, 3))
         x = x.reshape((1, get_height_width(target_image_path, style_reference_image_path)[0], get_height_width(target_image_path, style_reference_image_path)[1], 3))
         outs = fetch_loss_and_grads([x])
         loss_value = outs[0]
