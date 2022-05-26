@@ -1,66 +1,35 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="wrapper style2">
-
-    <article id="main" class="container special">
-        <header>
-                    바꾸고 싶은 이미지를 업로드
-            <form method="post" action="" enctype="multipart/form-data">
-                <input type="file" name="target_img">
-                {% csrf_token %}
-                <label for="style_img">입힐 스타일</label>
-                <select name="style_img" id="style_img">
-                    <option value="Picasso">Picasso</option>
-                    <option value="Manet">Manet</option>
-                    <option value="Rousseau">Rousseau</option>
-                </select>
-
-                <button type="submit" value="Transfer">Transfer</button>
-            </form>
-        </header>
-        <footer>
-            <a href="#" class="button">Continue Reading</a>
-        </footer>
-    </article>
-    
-</div>
-<!-- 
-<div >
-    <header>
-        <div>
-            <br>
-            바꾸고 싶은 이미지를 업로드
-            <form method="post" action="" enctype="multipart/form-data">
-                
-                        <input type="file" name="target_img" required/>
-                        {% csrf_token %}
-            <div>
-                <div class="row">
-                    <label for="style_img">입힐 스타일</label>
-                    <div class="col-9 col-12-medium">
-                        <select name="style_img" id="style_img">
-                            <option value="Picasso">Picasso</option>
-                            <option value="Manet">Manet</option>
-                            <option value="Rousseau">Rousseau</option>
-                        </select>
-                    </div>
-                    <div class="col-3 col-12-medium">
-                        <button type="submit" value="Transfer">Transfer</button>
-                    </div>
-                </div>
-            </div> 
-            <br>      
-            <p>
-                뉴럴 스타일 트랜스퍼를 이용하여 타깃 이미지의 콘텐츠를 보존하면서 참조 이미지의 스타일을 타깃 이미지에 적용합니다.
-            </p>
-        </form>
-        </div>
+						<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="" id="logo">Image Style Transfer</a></h1>
+								<hr />
+								<p>Another fine freebie by HTML5 UP**</p>
+						
+						
+								<br>
+								<br>
+								<h1></h1>
+							</header>
+							<footer>
+								<a href="mainpage" class="button circled scrolly">Start</a>
+							</footer>
+						</div>
+                        
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li><a href="/" style="color: #DF7366;">Home</a></li>
+									<li><a href="mainpage">Main</a></li>
+									<li><a href="result">Result</a></li>
+									<li><a href="readme">README</a></li>
+									<li><a href="developer">Developer</a></li>
+								</ul>
+							</nav>
 
 
-
-    </header>
-</div> -->
 <article id="work" class="panel intro">
     <header>
         
