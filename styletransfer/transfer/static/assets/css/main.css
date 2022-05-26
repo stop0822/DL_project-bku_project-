@@ -2257,7 +2257,7 @@ input, select, textarea {
 
 		body.homepage #header:after {
 			content: '';
-			background: #1C0920;
+			background: linear-gradient(80deg, #4c545f, orange/*#2c3444*/);
 			display: block;
 			position: absolute;
 			left: 0;
