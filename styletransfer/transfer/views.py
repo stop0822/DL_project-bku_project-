@@ -22,29 +22,21 @@ def index(request):
         combination_image = os.listdir('assets/' + file_prefix + '/')
         
 
+        return render("/result/" + file_prefix)
 
-        print(target_path,style_path)
-        context = {'target_image':target_image,
-                    'style_image':style_image,
-                    'combination':combination_image}
-        return render(request,'main.html', context)
 
     if request.method == 'GET':
-        print(os.getcwd())
-        combination_image = os.listdir('transfer/assets/20225252414' + '/')
-        context = {
-                    'image_list':combination_image}
-
-        return render(request,'main.html', context)
+        return render(request,'main.html')
 
 
-def result(request):
-
-    combination_image = os.listdir('transfer/static/assets/20225252620' )
+def result(request,folder):
+    folder = str(folder)
+    print(folder)
+    combination_image = os.listdir('transfer/static/assets/'+folder )
     print(combination_image)
-    base_dir= 'assets/20225252620'
-    context = {
-                    'image_list':[ base_dir + '/' +x for x in combination_image]}
+    combination_image.remove('target.jpg')
+    base_dir= 'assets/' + folder
+    context = {'image_list':[ base_dir + '/' +x for x in combination_image]}
 
         
     return render(request,'result.html', context)
