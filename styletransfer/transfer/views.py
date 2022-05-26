@@ -33,6 +33,8 @@ def result(request,folder):
     folder = str(folder)
     print(folder)
     combination_image = os.listdir('transfer/static/assets/'+folder )
+    print(combination_image)
+    combination_image.remove('target.jpg')
     base_dir= 'assets/' + folder
     context = {'image_list':[ base_dir + '/' +x for x in combination_image]}
 
