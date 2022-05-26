@@ -1,16 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="inner">
+<div class="wrapper style2">
+
+    <article id="main" class="container special">
+        <header>
+                    바꾸고 싶은 이미지를 업로드
+            <form method="post" action="" enctype="multipart/form-data">
+                <input type="file" name="target_img">
+                {% csrf_token %}
+                <label for="style_img">입힐 스타일</label>
+                <select name="style_img" id="style_img">
+                    <option value="Picasso">Picasso</option>
+                    <option value="Manet">Manet</option>
+                    <option value="Rousseau">Rousseau</option>
+                </select>
+
+                <button type="submit" value="Transfer">Transfer</button>
+            </form>
+        </header>
+        <footer>
+            <a href="#" class="button">Continue Reading</a>
+        </footer>
+    </article>
+    
+</div>
+<!-- 
+<div >
     <header>
-        <h1><a href="index.html" id="logo">Image Style Transfer</a></h1>
-        <hr />
-        <p>Another fine freebie by HTML5 UP</p>
-
-
-        <br>
-        <br>
-        <h1></h1>
         <div>
             <br>
             바꾸고 싶은 이미지를 업로드
@@ -43,10 +60,7 @@
 
 
     </header>
-    <footer>
-        <a href="#features" class="button circled scrolly">Start</a>
-    </footer>
-</div>
+</div> -->
 <article id="work" class="panel intro">
     <header>
         
