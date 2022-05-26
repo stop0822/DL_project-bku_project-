@@ -48,3 +48,17 @@ def result(request):
 
         
     return render(request,'result.html', context)
+
+
+
+def mainpage(request):
+
+    return render(request,'mainpage.html')
+
+def readme(request):
+
+    return render(request,'readme.html')
+
+def developer(request):
+
+    return render(request,'developer.html')
