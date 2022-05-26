@@ -39,6 +39,7 @@ def get_height_width(target_img_path, style_reference_img_path):
     return img_height, img_width
 
 
+# target img를 받아서 전처리된 img를 return 해주는 함수.
 def preprocess_image(image_path):
     # target_size=(img_height, img_width) 형태이므로
     # img_height, img_width를 튜플으로 반환하는 get_height_width(target_image_path, style_reference_image_path) 함수를 그대로 사용.
@@ -175,26 +176,41 @@ def crystalize(target_img_path, style_reference_img_path) :
     style_weight = 1.
     content_weight = 0.025
 
+    # 목표는 loss인 content_loss, style_loss, total_variation_loss 손실들의 가중치 평균을 구하는 것이다.
+    # 따라서, loss를 스칼라 값으로 설정한다.
     loss = K.variable(0.)
     
     # 
     layer_features = outputs_dict[content_layer]
     target_image_features = layer_features[0, :, :, :]
     combination_features = layer_features[2, :, :, :]
+        
+    # 최소화할 손실은
+    # content_loss, style_loss, total_variation_loss 
+    # 세 가지 손실의 가중치 평균이다.
+    # 각 로스를 loss 변수에 담아서 다음으로 넘겨가며 다 더한다.
     
+    # 1. <content_loss>
     # 사용자 정의함수인 content_loss 사용
     loss = loss + content_weight * content_loss(target_image_features, combination_features)
 
+    # 2. <style_loss>
+    # 직접 만들어 둔 style_layers 리스트에서 각 층에 대한 로스를 구한 뒤, 더해준다.
     for layer_name in style_layers :
         layer_features = outputs_dict[layer_name]
         style_reference_features = layer_features[1, :, :, :]
         combination_features = layer_features[2, :, :, :]
         sl = style_loss(style_reference_features, combination_features)
+        
+        # 1. <content_loss>에서 구한 loss에 
+        # style_layers 리스트를 돌면서 로스를 구한 것을 더한다.
         loss = loss + (style_weight / len(style_layers)) * sl
-        
-        
+    
+    # 3. <total_variation_loss>
+    # 위에서 구했던 1. <content_loss>와 2. <style_loss>를 다 더한 loss에
+    # 가중치 * total_variation_loss 를 더해준다.
+    # 그러면, 최종 loss가 나온다.
     loss = loss + total_variation_weight * total_variation_loss(combination_image)
-
 
 
     grads = K.gradients(loss, combination_image)[0]
@@ -211,6 +227,7 @@ def crystalize(target_img_path, style_reference_img_path) :
 
     x = preprocess_image(target_image_path)
     x = x.flatten()
+    # 각 단계별로 사진을 저장한다.
     for i in range(iterations):
         print('반복 횟수 : ', i)
         start_time = time.time()
@@ -229,10 +246,6 @@ def crystalize(target_img_path, style_reference_img_path) :
         end_time = time.time()
         print('%d 번째 반복 완료 : %ds' % (i, end_time - start_time))
         
-    return save_img(fname, img)
+    return None
 
 # ----------------------------------------------------------------------------------
-<<<<<<< HEAD
-
-=======
->>>>>>> root/main
