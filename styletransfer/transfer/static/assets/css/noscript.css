@@ -14,4 +14,5 @@
 
 	body.homepage.is-preload #header:after {
 		opacity: 0;
+		background: linear-gradient(80deg, #4c545f, orange/*#2c3444*/);
 	}
