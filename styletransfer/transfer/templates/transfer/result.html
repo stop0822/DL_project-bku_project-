@@ -16,18 +16,46 @@
                 </div>
 
                 <body>
+					<div class="container" align="center">
+						<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="height: 50%; width: 50%">
+							<div class="carousel-inner">
+							
+							<div class="carousel-item active">
+								<img src="../../static/assets/20225252620/target.jpg" class="d-block w-100" alt="...">
+							</div>
+							{% for image in image_list %}
+							<div class="carousel-item">
+								<img src="{% static image %}" class="d-block w-100" alt="...">
+							</div>
+							<!-- <div class="carousel-item">
+								<img src="..." class="d-block w-100" alt="...">
+							</div> -->
+							{% endfor %}
+							</div>
+							<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+					</div>
+					<br>
                     <div class="container">
                         <div class="row">
                             <script>s = 0</script>
                         {% for image in image_list %}
                         <div class="col-4">
-                            <script>
-                                s += 1
-                                document.write("<p>",s,"번째 이미지변경</p>")
-                            </script>
+                            
                             <div class="card">
                                 <img src="{% static image %}" alt="" class="card-img-top" />
                                 <div class="card-body">
+									<script>
+										s += 1
+										document.write(s,"번째 이미지변경")
+									</script>
                                 </div>
                             </div>
                         </div>
@@ -38,6 +66,8 @@
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
                 </body>
+
+				
 
    
             <!-- Footer -->
