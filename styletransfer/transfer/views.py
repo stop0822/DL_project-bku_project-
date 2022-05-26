@@ -38,7 +38,6 @@ def result(request,folder):
     base_dir= 'assets/' + folder
     context = {'image_list':[ base_dir + '/' +x for x in combination_image]}
 
-
         
     return render(request,'result.html', context)
 
@@ -55,4 +54,3 @@ def readme(request):
 def developer(request):
 
     return render(request,'developer.html')
-
