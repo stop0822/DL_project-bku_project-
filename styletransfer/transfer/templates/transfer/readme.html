@@ -2,27 +2,53 @@
 {% load static %}
 {% block content %}
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="/" id="logo">Helios</a></h1>
-							</header>
-						</div>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="/">Home</a></li>
-								<li><a href="mainpage">Main</a></li>
-								<li><a href="result">Result</a></li>
-								<li><a href="readme" style="color: #DF7366;">README</a></li>
-								<li><a href="developer">Developer</a></li>
-							</ul>
-						</nav>
-
-				</div>
+<!-- Inner -->
+	<div class="inner">
+		<header>
+			<h1><a href="/" id="logo">Helios</a></h1>
 
 
-		</div>
 
-		{% endblock %}
+
+			<input type="button" id="hw" value="Hello world" />
+			<script type="text/javascript">
+				var hw = document.getElementById('hw');
+				hw.addEventListener('click', function(){
+					alert('Hello world');
+				})
+			</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</header>
+	</div>
+
+<!-- Nav -->
+	<nav id="nav">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="mainpage">Main</a></li>
+			<li><a href="result">Result</a></li>
+			<li><a href="readme" style="color: #DF7366;">README</a></li>
+			<li><a href="developer">Developer</a></li>
+		</ul>
+	</nav>
+
+<!-- Copyright -->
+<div class="copyright">
+	<ul class="menu">
+		<li>&copy; Untitled. All rights reserved.</li><li>Design: Chcaine</li>
+	</ul>
+	</div>
+
+	{% endblock %}
