@@ -12,7 +12,7 @@ def index(request):
     if request.method == 'POST':
         target_image = Image.open(request.FILES["target_img"],mode='r')
         style_image = request.POST["style_img"]
-        file_prefix = str(localtime().tm_year ) + str(localtime().tm_mon) + str(localtime().tm_mday) + str(localtime().tm_min) + str(localtime().tm_sec) + '/'
+        file_prefix = str(localtime().tm_year ) + str(localtime().tm_mon) + str(localtime().tm_mday) + str(localtime().tm_min) + str(localtime().tm_sec) 
         os.mkdir(target_image_base_path + file_prefix)
         target_image.save(target_image_base_path + file_prefix +'/target.jpg')
         target_path = target_image_base_path + file_prefix +'/target.jpg'
@@ -37,6 +37,7 @@ def result(request,folder):
     combination_image.remove('target.jpg')
     base_dir= 'assets/' + folder
     context = {'image_list':[ base_dir + '/' +x for x in combination_image]}
+
 
         
     return render(request,'result.html', context)
