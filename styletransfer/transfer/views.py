@@ -43,9 +43,9 @@ def result(request,folder):
 
 
 
-def mainpage(request):
+def home(request):
 
-    return render(request,'mainpage.html')
+    return render(request,'home.html')
 
 def readme(request):
 
