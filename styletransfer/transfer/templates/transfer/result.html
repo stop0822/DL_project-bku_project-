@@ -4,9 +4,9 @@
 
 
 <!-- Inner -->
-<div class="inner" align="center" style="background-color: #bfb4b67b;border-radius: 15px; height: 60%; width: 60%">
+<div class="inner" style="background-color: #bfb4b67b;border-radius: 15px;">
 	<header>
-		<div class="container" align="center" style="height: 100%; width: 100%">
+		<div class="container" align="center">
 			<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="height: 70%; width: 70%">
 				<!-- style="height: 50%; width: 50%" -->
 				<div class="carousel-inner">
@@ -16,21 +16,20 @@
 				</div>
 				{% for image in image_list %}
 				<div class="carousel-item">
-					<img src="{% static image %}" class="d-block w-100" alt="..." style="height: 60%; width: 60%">
+					<img src="{% static image %}" class="d-block w-100" alt="..." style="height: 70%; width: 70%">
 				</div>
 				<!-- <div class="carousel-item">
 					<img src="..." class="d-block w-100" alt="...">
 				</div> -->
 				{% endfor %}
 				</div>
-
 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
 				</button>
 				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
 				</button>
 			</div>
 		</div>
@@ -48,34 +47,6 @@
 					</ul>
 				</nav>
                 </div>
-				<div class="container" align="center" style="height: 100%; width: 100%; ">
-					<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="height: 70%; width: 70%">
-						<!-- style="height: 50%; width: 50%" -->
-						<div class="carousel-inner">
-						
-						<div class="carousel-item active">
-							<img src="{% static target %}" class="d-block w-100" alt="..." style="height: 70%; width: 70%">
-						</div>
-						{% for image in image_list %}
-						<div class="carousel-item">
-							<img src="{% static image %}" class="d-block w-100" alt="..." style="height: 60%; width: 60%">
-						</div>
-						<!-- <div class="carousel-item">
-							<img src="..." class="d-block w-100" alt="...">
-						</div> -->
-						{% endfor %}
-						</div>
-				
-						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Previous</span>
-						</button>
-						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Next</span>
-						</button>
-					</div>
-				</div>
                 <body>
 					<br>
                     <div class="container">

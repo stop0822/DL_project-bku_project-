@@ -223,7 +223,7 @@ def crystalize(target_img_path, style_reference_img_path,file_prefix) :
         img = deprocess_image(img)
         
         # fname은 file name 이다.
-        fname = file_prefix + result_prefix + '_at_iteration_%d.png' % i
+        fname = file_prefix + '/' +result_prefix + '_at_iteration_%d.png' % i
         save_img(fname, img)
         print('저장 이미지 : ', fname)
         end_time = time.time()
