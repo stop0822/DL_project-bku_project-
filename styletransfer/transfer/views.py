@@ -36,7 +36,8 @@ def result(request,folder):
     print(combination_image)
     combination_image.remove('target.jpg')
     base_dir= 'assets/' + folder
-    context = {'image_list':[ base_dir + '/' +x for x in combination_image]}
+    context = {'target': base_dir + '/' + 'target.jpg',
+        'image_list':[ base_dir + '/' +x for x in combination_image]}
 
 
         
