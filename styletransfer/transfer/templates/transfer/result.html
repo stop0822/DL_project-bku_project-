@@ -33,8 +33,30 @@
 				</button>
 			</div>
 		</div>
+
+		
 	</header>
 </div>
+
+<!-- Carousel -->
+			<section class="carousel">
+				<div class="reel">
+
+                    {% for image in image_list %}
+					<article>
+						<a href="#" class="image featured"><img src="{% static image %}" alt="" /></a>
+						<header>
+							<h3><a href="#">Pulvinar sagittis congue</a></h3>
+						</header>
+						<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+					</article>
+                    {% endfor %}
+
+
+				</div>
+			</section>
+
+			
 
 				<!-- Nav -->
 				<nav id="nav">
