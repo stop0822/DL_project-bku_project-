@@ -19,10 +19,9 @@ def index(request):
         
         style_path = style_image_base_path + style_image + '.jpg'
         crystalize(target_path, style_path, target_image_base_path + file_prefix)
-        combination_image = os.listdir('assets/' + file_prefix + '/')
         
 
-        return render("/result/" + file_prefix)
+        return redirect("/result/" + file_prefix)
 
 
     if request.method == 'GET':
