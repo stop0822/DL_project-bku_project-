@@ -64,5 +64,6 @@ Functional API를 통해 모델을 정의하면 입력과 출력을 정의할 �
 우리는 tf.gradient를 사용하여 옵티마이저 업데이트 규칙을 적용하여 이미지를 반복적으로 업데이트했다. 최적기는 입력 이미지와 관련하여 주어진 손실을 최소화했다.
 
 
-C:\Users\LeeJeongSeung\gitsd\DL_project-bku_project-\styletransfer\transfer\static\assets\20225271842\target.jpg
-C:\Users\LeeJeongSeung\gitsd\DL_project-bku_project-\styletransfer\transfer\static\assets\20225271842\style_transfer_result_at_iteration_19.png
+![target](https://user-images.githubusercontent.com/63196575/171191065-a6a5e3bc-2851-430d-9613-4b8bcbae5d0a.jpg)
+![style_transfer_result_at_iteration_19](https://user-images.githubusercontent.com/63196575/171191099-5baa26a9-1439-481c-871c-0153044a1a5d.png)
+
