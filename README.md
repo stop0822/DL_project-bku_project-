@@ -63,11 +63,10 @@ Functional API를 통해 모델을 정의하면 입력과 출력을 정의할 �
 우리는 텐서를 직접 조작하여 디버깅과 텐서 작업을 쉽게 할 수 있습니다. 
 우리는 tf.gradient를 사용하여 옵티마이저 업데이트 규칙을 적용하여 이미지를 반복적으로 업데이트했다. 최적기는 입력 이미지와 관련하여 주어진 손실을 최소화했다.
 
-<picture>
- <source media= srcset="https://user-images.githubusercontent.com/63196575/171191065-a6a5e3bc-2851-430d-9613-4b8bcbae5d0a.jpg">
- <source media= srcset="https://user-images.githubusercontent.com/63196575/171191099-5baa26a9-1439-481c-871c-0153044a1a5d.png">
-</picture>
+### 🔷 타겟 이미지
 ![target](https://user-images.githubusercontent.com/63196575/171191065-a6a5e3bc-2851-430d-9613-4b8bcbae5d0a.jpg)
-
+### 🔷 스타일 이미지
+![Picasso](https://user-images.githubusercontent.com/63196575/171192356-e477279c-347c-48b4-8848-fa8b91681f15.jpg)
+### 🔷 생성 이미지
 ![style_transfer_result_at_iteration_19](https://user-images.githubusercontent.com/63196575/171191099-5baa26a9-1439-481c-871c-0153044a1a5d.png)
 
