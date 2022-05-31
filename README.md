@@ -62,3 +62,7 @@ Functional API를 통해 모델을 정의하면 입력과 출력을 정의할 �
 신속한 실행을 통해 자연스러운 파이썬 제어 흐름을 사용하여 텐서로 동적으로 작업할 수 있습니다. 
 우리는 텐서를 직접 조작하여 디버깅과 텐서 작업을 쉽게 할 수 있습니다. 
 우리는 tf.gradient를 사용하여 옵티마이저 업데이트 규칙을 적용하여 이미지를 반복적으로 업데이트했다. 최적기는 입력 이미지와 관련하여 주어진 손실을 최소화했다.
+
+
+C:\Users\LeeJeongSeung\gitsd\DL_project-bku_project-\styletransfer\transfer\static\assets\20225271842\target.jpg
+C:\Users\LeeJeongSeung\gitsd\DL_project-bku_project-\styletransfer\transfer\static\assets\20225271842\style_transfer_result_at_iteration_19.png
