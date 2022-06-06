@@ -207,7 +207,7 @@ def crystalize(target_img_path, style_reference_img_path,file_prefix) :
     evaluator = Evaluator()
 
     result_prefix = 'style_transfer_result'
-    iterations = 20
+    iterations = 6
 
     x = preprocess_image(target_image_path)
     x = x.flatten()
