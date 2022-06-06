@@ -222,7 +222,7 @@ def crystalize(target_img_path, style_reference_img_path,file_prefix) :
     evaluator = Evaluator()
 
     result_prefix = 'style_transfer_result'
-    iterations = 20
+    iterations = 6
 
     x = preprocess_image(target_image_path)
     x = x.flatten()
@@ -239,7 +239,7 @@ def crystalize(target_img_path, style_reference_img_path,file_prefix) :
         img = deprocess_image(img)
         
         # fname은 file name 이다.
-        fname = file_prefix + result_prefix + '_at_iteration_%d.png' % i
+        fname = file_prefix + '/' +result_prefix + '_at_iteration_%d.png' % i
         save_img(fname, img)
         print('저장 이미지 : ', fname)
         end_time = time.time()

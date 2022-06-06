@@ -1,40 +1,67 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-						<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="" id="logo">Image Style Transfer</a></h1>
-								<hr />
-								<p>Another fine freebie by HTML5 UP**</p>
-						
-						
-								<br>
-								<br>
-								<h1></h1>
-							</header>
-							<footer>
-								<a href="mainpage" class="button circled scrolly">Start</a>
-							</footer>
-						</div>
-                        
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="/" style="color: #DF7366;">Home</a></li>
-									<li><a href="mainpage">Main</a></li>
-									<li><a href="result">Result</a></li>
-									<li><a href="readme">README</a></li>
-									<li><a href="developer">Developer</a></li>
-								</ul>
-							</nav>
+<style>
+    .upload-box {
+		padding: 20px;
+        column-count: 2;
+        column-gap: 50px;
+        column-rule-color: lightslategray;
+        column-rule-style: dotted;
+        column-width: 2px;
+    }        
+	/* .col-merge {
+            column-span:all;
+        }     */
+</style>
 
 
-<article id="work" class="panel intro">
-    <header>
-        
-    </header>
-   
-</article>
+<!-- Inner -->
+<div class="inner" style="background-color: #bfb4b67b;border-radius: 15px;width: 1000px;height: 550px;">
+	<header>
+
+		<!--  -->
+		<div class="upload-box">
+			<form method="post" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div >
+					<input type="file" name="target_img">
+					<script type="text/javascript" src="selet_file.js"></script>
+				</div>
+				<div >
+					
+					<select name="style_img" id="style_img">
+						<option value="Picasso">Picasso</option>
+						<option value="Manet">Manet</option>
+						<option value="Rousseau">Rousseau</option>
+					</select>
+					<label for="style_img">입힐 스타일</label>
+					<button type="submit" value="Transfer">Transfer</button>
+				</div>
+			</form>
+		</div>
+		<!--  -->
+
+	</header>
+</div>
+
+	<!-- Nav -->
+	<nav id="nav">
+		<ul>
+			<li><a href="/home">Home</a></li>
+			<li><a href="/main" style="color: #DF7366;">Main</a></li>
+			<li><a href="/result">Result</a></li>
+			<li><a href="/readme">README</a></li>
+			<li><a href="/developer">Developer</a></li>
+		</ul>
+	</nav>
+
+	<!-- Copyright -->
+	<div class="copyright">
+		<ul class="menu">
+		   <li>&copy; Untitled. All rights reserved.</li><li>Design: Chcaine</li>
+		</ul>
+	</div>
 
 {% endblock %}
