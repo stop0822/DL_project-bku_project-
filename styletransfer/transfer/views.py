@@ -5,6 +5,9 @@ import os
 from PIL import Image
 from .total_func import crystalize
 from time import localtime
+from django.http.response import StreamingHttpResponse
+from .camera import FaceDetect
+
 style_image_base_path = 'transfer/static/img/'
 target_image_base_path = 'transfer/static/assets/'
 
@@ -59,3 +62,17 @@ def readme(request):
 def developer(request):
 
     return render(request,'developer.html')
+
+
+def facedetect(request):
+	return render(request, 'camera.html')
+
+def gen(camera):
+	while True:
+		frame = camera.get_frame()
+		yield (b'--frame\r\n'
+				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+		
+def facecam_feed(request):
+	return StreamingHttpResponse(gen(FaceDetect()),
+					content_type='multipart/x-mixed-replace; boundary=frame')

@@ -9,7 +9,9 @@ urlpatterns = [
     path(r'index', index, name ='index'),
     path(r'home', home, name ='home'),
     path(r'readme', readme, name ='readme'),
-    path(r'developer', developer, name ='developer')
+    path(r'developer', developer, name ='developer'),
+    path(r'facedetector', facedetect, name='facedetetor'),
+    path(r'facecam_feed', facecam_feed, name='facecam_feed'),
 ]
 
 
