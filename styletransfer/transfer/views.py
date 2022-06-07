@@ -8,6 +8,10 @@ from time import localtime
 style_image_base_path = 'transfer/static/img/'
 target_image_base_path = 'transfer/static/assets/'
 
+
+def redirection(request):
+    return redirect('/home')
+
 def index(request):
     if request.method == 'POST':
         target_image = Image.open(request.FILES["target_img"],mode='r')

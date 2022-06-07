@@ -3136,3 +3136,26 @@ input, select, textarea {
 					}
 
 	}
+
+
+
+/* developer images */
+.inner {
+	
+	display:flex;
+	align-items:center;
+}
+
+#developer_images {
+	color:black;
+	font-weight:bold;
+}
+
+.card-body {
+	background-color: #bfb4b67b;
+}
+
+/* README page h2 */
+#boldtitle {
+	font-weight: bold;
+}

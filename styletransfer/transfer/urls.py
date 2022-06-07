@@ -3,6 +3,7 @@ from .views import *
 
 
 urlpatterns = [
+    path(r'', redirection, name='loadhome'),
     path(r'main', index, name='index' ),
     path(r'result/<int:folder>', result, name ='result'),
     path(r'index', index, name ='index'),
