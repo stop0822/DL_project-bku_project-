@@ -289,7 +289,7 @@ simplegeneric==0.8.1
 singledispatch @ file:///tmp/build/80754af9/singledispatch_1629321204894/work
 sip==4.19.13
 six @ file:///tmp/build/80754af9/six_1623709665295/work
-sklearn==0.0
+sklearn
 smmap==5.0.0
 sniffio @ file:///C:/ci/sniffio_1614030527509/work
 snowballstemmer @ file:///tmp/build/80754af9/snowballstemmer_1611258885636/work

@@ -15,7 +15,7 @@
 		<ul>
 			<li><a href="/home">Home</a></li>
 			<li><a href="/main">Main</a></li>
-			<li><a href="/result">Result</a></li>
+			<!-- <li><a href="/result">Result</a></li> -->
 			<li><a href="/readme" style="color: #DF7366;">README</a></li>
 			<li><a href="/developer">Developer</a></li>
 		</ul>
@@ -82,6 +82,36 @@
 				<li>Content Image가 Conv4 레이어를 거쳐 나온 Feature Map의 차이를 Content Loss 값으로 정의</li>
 				<li>위 두 Loss값이 작아지도록 학습하여 New Image 만들어간다.</li>
 			</ul>
+			<hr>
+			<br>
+			<br>
+			<br>
+			<div class="row">
+				<article class="col-4 col-12-mobile special">
+					<header>
+						<h3>🔷 타겟 이미지</h3>
+					</header>
+					<br>
+					<a href="#" class="image featured"><img src="{% static 'images/target_dog.jpg'%}" style="height:23em;" alt="" /></a>
+				</article>
+				<article class="col-4 col-12-mobile special">
+					<header>
+						<h3>🔷 스타일 이미지</h3>
+					</header>
+						<br>
+					<a href="#" class="image featured"><img src="{% static 'images/style_picasso.jpg'%}" style="height:23em;" alt="" /></a>
+				</article>
+				<article class="col-4 col-12-mobile special">
+					<header>
+						<h3>🔷 생성 이미지</h3>
+					</header>
+						<br>
+					<a href="#" class="image featured"><img src="{% static 'images/result_dog.png'%}" style="height:23em;" alt="" /></a>
+				</article>
+			</div>
+			<hr>
+			<br>
+			<br>
 			<p><br></p>
 			<h2 id="boldtitle">변이형 오토인코더(VAE) (🌜➡🌞➡🌜)</h2>
 			<br>
@@ -111,29 +141,7 @@
 		<hr />
 		<br>
 		<br>
-		<div class="row">
-			<article class="col-4 col-12-mobile special">
-				<header>
-					<h3>🔷 타겟 이미지</h3>
-				</header>
-				<br>
-				<a href="#" class="image featured"><img src="{% static 'images/target_dog.jpg'%}" style="height:23em;" alt="" /></a>
-			</article>
-			<article class="col-4 col-12-mobile special">
-				<header>
-					<h3>🔷 스타일 이미지</h3>
-				</header>
-					<br>
-				<a href="#" class="image featured"><img src="{% static 'images/style_picasso.jpg'%}" style="height:23em;" alt="" /></a>
-			</article>
-			<article class="col-4 col-12-mobile special">
-				<header>
-					<h3>🔷 생성 이미지</h3>
-				</header>
-					<br>
-				<a href="#" class="image featured"><img src="{% static 'images/result_dog.png'%}" style="height:23em;" alt="" /></a>
-			</article>
-		</div>
+		
 	</div>
 </div>
 
