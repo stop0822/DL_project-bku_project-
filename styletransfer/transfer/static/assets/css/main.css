@@ -3154,3 +3154,8 @@ input, select, textarea {
 .card-body {
 	background-color: #bfb4b67b;
 }
+
+/* README page h2 */
+#boldtitle {
+	font-weight: bold;
+}
