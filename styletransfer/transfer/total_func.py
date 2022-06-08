@@ -1,5 +1,7 @@
 import tensorflow as tf
-tf.compat.v1.disable_eager_execution()
+from tensorflow.compat.v1 import disable_eager_execution
+disable_eager_execution()
+
 
 from tensorflow.keras.preprocessing.image import save_img
 from tensorflow.keras.preprocessing.image import load_img,img_to_array,save_img
@@ -134,7 +136,7 @@ class Evaluator(object):
               # target_img_path 는 str 형태의 경로
                                # style_reference_image_path 는 str 형태의 경로
 def crystalize(target_img_path, style_reference_img_path,file_prefix) :
-   
+    
     # global 변수 target_image_path, style_reference_image_path 선언
     # 함수에 들어가는 input에는 img
     # 함수가 실행된 뒤, 생성되는 변수는 image 가 들어간다.
