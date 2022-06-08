@@ -55,6 +55,11 @@ class FaceDetect(object):
 		detector.setInput(imageBlob)
 		detections = detector.forward()
 
+		sketch_image_list = []
+		canny_image_list = []
+		enhanced_image_list = []
+		point_list = []
+
 
 		# loop over the detections
 		for i in range(0, detections.shape[2]):
@@ -96,24 +101,63 @@ class FaceDetect(object):
 				# associated probability
 				text = "{}: {:.2f}%".format(name, proba * 100)
 				y = startY - 10 if startY - 10 > 10 else startY + 10
-				cropped = frame[startY:endY, startX: endX].copy()
 
-				after_cropped = frame[startY:endY, startX: endX] =0
-				after_cropped = 0
 				
+				cropped = frame[startY:endY, startX: endX].copy()
 				gray_image = cv2.cvtColor(cropped,cv2.COLOR_BGR2GRAY)
+				
+				## 스케치 스타일
 				inverted_gray_image = 255 - gray_image
 				blurred_img = cv2.GaussianBlur(inverted_gray_image,(21,21),0)
 				inverted_blurred_img = 255 - blurred_img
-				pencil_sketch_IMG = cv2.divide(gray_image,inverted_blurred_img,scale=256.0)
+				pencil_sketch_face = cv2.divide(gray_image,inverted_blurred_img,scale=256.0)
 				
-				frame[startY:endY, startX: endX] = backtorgb = cv2.cvtColor(pencil_sketch_IMG,cv2.COLOR_GRAY2RGB)
+
+				## 캐니 에지 부분
+				# 픽셀 강도의 중간값을 계산
+				median_intensity = np.median(gray_image)
+				# 중간 픽셀 강도에서 위아래 1 표준편차 떨어진 값을 임곗값으로 지정
+				lower_threshold = int(max(0, (1.0 - 0.33) * median_intensity))
+				upper_threshold = int(min(255, (1.0 + 0.33) * median_intensity))
+				# Canny edge detection 적용
+				image_canny = cv2.Canny(gray_image, lower_threshold, upper_threshold)
+
+				
+
+				sketch_image_list.append(cv2.cvtColor(pencil_sketch_face,cv2.COLOR_GRAY2RGB))
+				canny_image_list.append(cv2.cvtColor(image_canny,cv2.COLOR_GRAY2RGB))
+				enhanced_image_list.append(cv2.cvtColor(cv2.equalizeHist(gray_image),cv2.COLOR_GRAY2RGB))
+				point_list.append((startY,endY, startX,endX))
+
+
+
 
 				# cv2.rectangle(frame, (startX, startY), (endX, endY),
 				# 	(0, 0, 255), 2)
 		
 				# cv2.putText(frame, text, (startX, y),
 				# 	cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
+
+		sketch_image = frame.copy()
+		canny_image = frame.copy()
+		enhanced_image = frame.copy()
+
+		for img,point in zip(sketch_image_list,point_list):
+			sketch_image[point[0]:point[1],point[2]:point[3]] = img
+
+		for img,point in zip(canny_image_list,point_list):
+			canny_image[point[0]:point[1],point[2]:point[3]] = img
+
+		for img,point in zip(enhanced_image_list,point_list):
+			enhanced_image[point[0]:point[1],point[2]:point[3]] = img
+
+
+		frame = cv2.hconcat([frame,sketch_image])
+		canny_image = cv2.hconcat([canny_image,enhanced_image])
+
+		frame = cv2.vconcat([frame,canny_image])
+
+
 
 		# update the FPS counter
 		self.fps.update()
