@@ -31,12 +31,13 @@ label {
     font-size: 18px;
     text-align: center;
     font-weight: bold;
-    width:29em;
+    width:22em;
     padding: 18px 0;
     margin: auto;
     border-radius: 5px;
     cursor: pointer;
 }
+
 
 .container p {
     text-align: center;
@@ -44,6 +45,17 @@ label {
 }
 
 #images {
+    width:90%;
+    position: relative;
+    border: 1px solid black;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#st_images {
     width:90%;
     position: relative;
     border: 1px solid black;
@@ -74,7 +86,7 @@ figcaption {
 
 #upload-box {
     border-right-style : double;
-    border-right-color: purple;
+    border-right-color: #5b5b5b;
     border-right-width: 3px;
     height: 630px;
 }

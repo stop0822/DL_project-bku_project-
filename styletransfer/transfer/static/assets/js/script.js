@@ -22,3 +22,29 @@ function preview(){
         reader.readAsDataURL(i);
     }
 }
+
+
+let styleInput = document.getElementById("style_img");
+let styleimageContainer = document.getElementById("st_images");
+
+function style_preview(){
+    // imageContainer.innerHTML = "";
+
+    // for (i of styleInput.files){
+    //     let reader = new FileReader();
+    //     let figure = document.createElement("figure");
+    //     let figCap = document.createElement("figcaption");
+    //     figCap.innerText = i.name;
+    //     figure.appendChild(figCap);
+    //     reader.onload=()=>{
+    //         let img = document.createElement("img");
+    //         img.setAttribute("src",reader.result);
+    //         figure.insertBefore(img,figCap);
+    //     }
+    //     styleimageContainer.appendChild(figure);
+    //     reader.readAsDataURL(i);
+    // } 
+    document.getElementById("submit").disabled = false;
+}
+
+

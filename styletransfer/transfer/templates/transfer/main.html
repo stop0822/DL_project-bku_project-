@@ -12,7 +12,7 @@
 				<form method="post" action="" enctype="multipart/form-data">
 					{% csrf_token %}
 					<div class="row">
-					<div class="col-sm-6 mx-auto" id="upload-box" style="width:50%">
+					<div class="col-6" id="upload-box" style="width:32em; margin-right: 5%; margin-left: -5%;">
 						<input type="file" name="target_img" id="file-input" accept="image/png,image/jpeg" onchange="preview()">
 						<label for="file-input" style="color:white;">
 							<i class="bi bi-upload"></i> &nbsp; Choose A photo
@@ -21,19 +21,27 @@
 						<!-- <script type="text/javascript" src="selet_file.js"></script> -->
 					</div>
 					<script src="{% static 'assets/js/script.js'%}"></script>
-					<div class="col-6" style="width:50%">
-						
-						<label for="style_img">입힐 스타일</label>
-						<select name="style_img" id="style_img">
+					<div class="col-6" style="width:32em;">
+						<select name="style_img" id="style_img" onchange="style_preview()">
 							<!-- <option value="none" hidden>입힐 스타일</option> -->
-							<option selected hidden>골라골라</option>
-							<option value="Picasso" onchange="style_preview()">Picasso</option>
-							<option value="Manet">Manet</option>
+							<option selected hidden >Choose Style**</option>
+							<option value="Picasso">Picasso</option>
+							<option value="boo">boo</option>
 							<option value="Rousseau">Rousseau</option>
+							<option value="Seurat">Seurat</option>
+							<option value="Munch">Munch</option>
+							<option value="ShinKwangho">ShinKwangho</option>
+							<option value="Monet">Monet</option>
+							<option value="Hwang">Hwang</option>
+							<option value="Gogh">Gogh</option>
 						</select>
 						<br>
+						
+						<div id="st_images" style="height:300px"></div>
+
 						<br>
-						<button type="submit" value="Transfer">Transfer</button>
+						<br>
+						<button type="submit" id="submit" value="Transfer" disabled>Transfer</button>
 					</div>
 				</div>
 				</form>
