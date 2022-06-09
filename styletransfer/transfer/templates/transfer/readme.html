@@ -30,7 +30,7 @@
 		<article id="main" class="special">
 			<header>
 				<h1 style="font-size:4em; font-weight: bold;">DeepLearning Project</h1>
-				<h4 id="-vae-gan-">뉴럴 스타일 트랜스퍼 (🌆✖️🌉🔜🌃) / 변이형 오토인코더(VAE) (🌜➡🌞➡🌜)</h4>
+				<h4 id="-vae-gan-">뉴럴 스타일 트랜스퍼 (🌆✖️🌉🔜🌃)</h4>
 			</header>
 			<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
 
@@ -109,39 +109,7 @@
 					<a href="#" class="image featured"><img src="{% static 'images/result_dog.png'%}" style="height:23em;" alt="" /></a>
 				</article>
 			</div>
-			<hr>
-			<br>
-			<br>
-			<p><br></p>
-			<h2 id="boldtitle">변이형 오토인코더(VAE) (🌜➡🌞➡🌜)</h2>
-			<br>
-			<h3 id="boldtitle">🔷 VAE의 개념</h3>
-			<p>X input data가 Gaussian Encoder로 들어가면 평균과 표준편차를 출력으로 나타내주고, (여기서 평균과 표준편차가 정규분포를 따른다고 가정했으니 Encoder는 Gaussian Encoder라고 부른다고 합니다), 해당 평균과 표준편차를 갖는 정규분포를 통해 z값을 sampling 해주는데, 바로 sampling을 적용하면 미분을 할 수 없어 역전파가 안된다는 문제가 생겨 아래와 같이 reparameterization trick을 적용해줍니다. 그리고 latent vector z를 베르누이를 따르는 decoder를 통과하게 되면 다음과 같은 두 개의 loss function인 reconstruction error와 regularization error를 갖게 됩니다.</p>
-			<ul>
-				<li>Decoder : 최소한의 학습 데이터 생성할 수 있음</li>
-				<li>Encoder : 최소한의 학습 데이터를 Latent vector로 잘 표현할 수 있음</li>
-			</ul>
-			<p>--&gt; VAE의 본래 목적이 사실 생성을 해주는 Decoder였지만, 결과론적으로 Latent vector를 너무 잘 만들어줘서 VAE의 Encoder를 주로 활용해준다.</p>
-			<br>
-			<h3 id="boldtitle">🔷 VAE의 목적</h3>
-			<p>Training set에 있는 data X가 나올 확률을 구함으로써 controller 역할을 하는 Latent Vector로 부터 이미지를 생성하는 것입니다.</p>
-			<p>VAE는 Decoder를 구축해서 output을 생성해주기 위해 encoder를 사용했습니다. 따라서, Encoder는 compressed representation이 주된 목적이고, decoder는 generative task가 주된 목적인 점에서 두 모델의 목적이 근본적으로 다르다고 할 수 있습니다.</p>
-			<br>
-			<h3 id="boldtitle">🔷 VAE의 구조</h3>
-			<p>VAE는 새로운 데이터를 생성하기 위해서 사용되는 모델이기에 생성하는 Decoder가 주된 목적인 모델입니다.
-			먼저 Autoencoder는 input image를 Encoder로 들어가게 되면 latent vector z를 출력하는데, 여기 VAE는 Input image가 input으로 들어가게 되면 Encoder를 통해서 평균과 표준편차 (뮤, 시그마)를 출력해냅니다.
-			따라서 평균과 표준편차를 알 수 있기에, 이 둘을 활용해서 Normal Distribution을 만들어줄 수 있습니다. 그래서 만들어진 정규 분포로부터 샘플링을 통해 z latent variable을 만들어내고, z를 다시 Decoder로 통과시켜 input과 동일한 output값을 출력해줄 수 있습니다.
-			그리고 저렇게 평균과 표준표차를 통해 만들어진 정규분포에서 샘플링하는 것은 학습과정에서 역전파를 실행할 때, 불가능합니다.
-			그래서 Reparameterization trick을 도입해 역전파를 가능하게 만들어줍니다.</p>
-			<br>
-			<h3 id="boldtitle">🔷 VAE의 특징</h3>
-			<p>Decoder는 최소한 학습 데이터를 생성해 낼 수 있고, Encoder는 최소한 학습 데이터를 latent vector로 잘 represent할 수 있다는 성질이 있습니다. 그래서 VAE의 목적이 사실 생성이었던 Decoder였지만, 결과론적으로 latent vector를 더 잘 만들어서 주로 Encoder를 활용하기 위해 사용이 많이 됩니다.
-			<br></p>
 		</article>
-		<hr />
-		<br>
-		<br>
-		
 	</div>
 </div>
 

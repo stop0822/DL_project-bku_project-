@@ -1961,7 +1961,7 @@ input, select, textarea {
 		width: 22em;
 		font-weight: bold;
 		border-radius: 5px;
-		margin: auto;
+		margin: 0 0 18px;
 		/* border: solid 1px black; */
 		padding: 18px 0;
 		text-align: center;

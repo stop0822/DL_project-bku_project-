@@ -56,8 +56,8 @@ label {
 }
 
 #st_images {
-    width:90%;
-    height: 300px;
+    width:100%;
+    height: 100%;
     position: relative;
     border: 1px solid black;
     margin: auto;
