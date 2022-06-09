@@ -4,14 +4,14 @@
 
 
 <div class="inner" align="center" style="background-color: #bfb4b67b;border-radius: 15px; height: 100%; width: 60%">
-	<div class="container" align="center" style="height: 100%; width: 100%;">
+	<div class="container" align="center" style="height: 100%; width: 100%; padding:50px">
 	<!-- <header> -->
 		<header>
 			<!--  -->
 			<!-- <div class="upload-box"> -->
-				<form method="post" action="" enctype="multipart/form-data">
-					{% csrf_token %}
-					<div class="row">
+			<form method="post" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="row">
 					<div class="col-6" id="upload-box" style="width:32em;">
 						<input type="file" name="target_img" id="file-input" accept="image/png,image/jpeg" onchange="preview()">
 						<label for="file-input" style="color:white;">
@@ -48,7 +48,7 @@
 							}
 						</script>
 					
-						 <select name="style_img" id="style_img" onchange="selectForm(value)" style="width:200; line-height:25px;">
+							<select name="style_img" id="style_img" onchange="selectForm(value)" style="width:200; line-height:25px;">
 							<!-- <option value="none" hidden>입힐 스타일</option> -->
 							<option selected hidden>Choose Style</option>
 							<option value="Picasso">Picasso</option>
@@ -95,10 +95,18 @@
 
 						<br>
 						<br>
-						<button type="submit" id="submit" value="Transfer" disabled>Transfer</button>
 					</div>
 				</div>
-				</form>
+					<button type="submit" id="submit" value="Transfer" onclick="loading_span()" disabled>Transfer</button>
+					
+					<loading >
+						<div class="loading"  id="load" style="display:none" >
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</loading>
+			</form>
 			<!-- </div> -->
 			<!--  -->
 		</header>
