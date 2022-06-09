@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 
+
 <style>
     .upload-box {
 		padding: 100px;
@@ -16,41 +17,76 @@
         }     */
 </style>
 
+
 <div class="inner" align="center" style="background-color: #bfb4b67b;border-radius: 15px; height: 100%; width: 60%">
 	<!-- <header> -->
-		<div class="container" align="center" style="height: 100%; width: 100%;">
-<!-- Inner -->
-<!-- <div class="inner" style="background-color: #bfb4b67b;border-radius: 15px;width: 1000px;height: 550px;"> -->
-	<header>
+	<div class="container" align="center" style="height: 100%; width: 100%;">
+		<!-- Inner -->
+		<!-- <div class="inner" style="background-color: #bfb4b67b;border-radius: 15px;width: 1000px;height: 550px;"> -->
+		<header>
+			<!--  -->
+			<div class="upload-box">
+				<form method="post" action="" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div >
+						<input type="file" name="target_img">
+					</div>
+					<div >
+						<select name="style_select" id="style_img" onchange="testChange(this)">
+							<!-- <option value="none" hidden>입힐 스타일</option> -->
+							<option selected disable>화가선택</option>
+							<option value="Picasso" id="Picasso">Picasso</option>
+							<option value="Manet" id="Manet">Manet</option>
+							<option value="Rousseau" id="Rousseau">Rousseau</option>
+						</select>
+						<img id="'style_img" crossriging="anonymous" src="./">
 
-		<!--  -->
-		<div class="upload-box">
-			<form method="post" action="" enctype="multipart/form-data">
-				{% csrf_token %}
-				<div >
-					<input type="file" name="target_img">
-					<script type="text/javascript" src="selet_file.js"></script>
-				</div>
-				<div >
-					
-					<select name="style_img" id="style_img">
-						<!-- <option value="none" hidden>입힐 스타일</option> -->
+						<script>
+							function testChange()
+							{
+								var selectedValue = document.getElementById("style_img").value;
+								console.log(selectedValue);
+								// document.write("<img src=\'{% static 'img/" + selectedValue + ".jpg' %}'/>");
+								src = "styletransfer/transfer/static/img/"
+								// $("#my_image").attr("src",selectedValue+".jpg");
+								$("#style_select").ready(function () {
+									var cur_value = $('option:selected', this).text();
+									console.log(cur_value);
+									var image_src = "styletransfer/transfer/static/img/" + cur_value + ".jpg";
+									console.log(image_src);
+									$("#style_img").attr("src", image_src);
 
-						<option value="Picasso">Picasso</option>
-						<option value="Manet">Manet</option>
-						<option value="Rousseau">Rousseau</option>
-					</select>
-					<label for="style_img">입힐 스타일</label>
-					<button type="submit" value="Transfer">Transfer</button>
-				</div>
-			</form>
-		</div>
-		<!--  -->
+									// $("#Picasso").attr({ "src": "Picasso.jpg" });
+									// $("#Manet").attr({ "src": "Manet.jpg" });
+									// $("#Rousseau").attr({ "src": "Rousseau.jpg" });
+								});
+							}
+						</script>
+						<!-- <script>
+							src = "DL_project-bku_project-/styletransfer/transfer/static/img/"
+							$("#my_image").attr("src",selectedValue+".jpg");
+						</script> -->
+						<label for="style_img">입힐 스타일</label>
+						<button type="submit" value="Transfer">Transfer</button>
+					</div>
+					<!-- <div >
+						<select name="style_img" id="style_img" onchange="drawImage()">
+							//<option value="none" hidden>입힐 스타일</option>
 
-	</header>
-		</div>
+							<option selected>화가선택</option>
+							<option value="Picasso" data-image="styletransfer\transfer\static\img\Picasso.jpg">Picasso</option>
+							<option value="Manet" data-image="styletransfer\transfer\static\img\Manet.jpg">Manet</option>
+							<option value="Rousseau" data-image="styletransfer\transfer\static\img\Rousseau.jpg">Rousseau</option>
+						</select>
+						<label for="style_img">입힐 스타일</label>
+						<button type="submit" value="Transfer">Transfer</button>
+					</div> -->
+				</form>
+			</div>
+			<!--  -->
+		</header>
+	</div>
 </div>
-
 	<!-- Nav -->
 	<nav id="nav">
 		<ul>
