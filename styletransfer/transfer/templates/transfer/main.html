@@ -20,11 +20,37 @@
 						<div id="images" style="height:300px"></div>
 						<!-- <script type="text/javascript" src="selet_file.js"></script> -->
 					</div>
+
 					<script src="{% static 'assets/js/script.js'%}"></script>
 					<div class="col-6" style="width:32em;">
-						<select name="style_img" id="style_img" onchange="style_preview()">
+						<script>
+							function selectForm(value){
+								var hiddenForms = document.getElementById("allForms");
+					
+								// getElementsByTagName
+								// element의 집합을 가져오는 함수
+								theForm = hiddenForms.getElementsByTagName("div");
+
+								for(x=0; x<theForm.length; x++){
+									theForm[x].style.display = "none";
+								}
+
+								let arr;
+								arr = ['Picasso', 'boo', 'Rousseau', 'Seurat', 'Munch', 'ShinKwangho', 'Monet', 'Hwang', 'Gogh']
+
+								for (x=0; x<theForm.length; x++){
+									if (value==arr[x]){
+										theForm[x].style.display = "block";
+									}
+								}
+
+								document.getElementById("submit").disabled = false;
+							}
+						</script>
+					
+						 <select name="style_img" id="style_img" onchange="selectForm(value)" style=width:200>
 							<!-- <option value="none" hidden>입힐 스타일</option> -->
-							<option selected hidden >Choose Style**</option>
+							<option>Choose Style</option>
 							<option value="Picasso">Picasso</option>
 							<option value="boo">boo</option>
 							<option value="Rousseau">Rousseau</option>
@@ -35,8 +61,39 @@
 							<option value="Hwang">Hwang</option>
 							<option value="Gogh">Gogh</option>
 						</select>
+					
+						<div id="allForms">
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\Picasso.jpg">
+							</div>
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\boo.jpg">
+							</div>
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\Rousseau.jpg">
+							</div>
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\Seurat.jpg">
+							</div>
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\Munch.jpg">
+							</div>
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\ShinKwangho.jpg">
+							</div>
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\Monet.jpg">
+							</div>
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\Hwang.jpg">
+							</div>
+							<div style="color: #000; width:200px; padding: 10px; display:none;">
+								<img src="..\static\img\Gogh.jpg">
+							</div>
+						</div>
 						<br>
 						
+
 						<div id="st_images" style="height:300px"></div>
 
 						<br>
