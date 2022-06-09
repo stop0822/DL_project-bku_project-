@@ -2296,6 +2296,10 @@ input, select, textarea {
 		z-index: 1;
 		overflow: hidden;
 	}
+	
+	#nav > ul >li > a:hover {
+		color: #DF7366;
+	}
 
 		#nav > ul {
 			line-height: 0px;
