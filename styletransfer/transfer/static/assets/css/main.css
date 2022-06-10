@@ -3168,3 +3168,13 @@ input, select, textarea {
 #boldtitle {
 	font-weight: bold;
 }
+
+#move footer h1:hover {
+	background: -webkit-linear-gradient(#eee, #bfb4b67b);
+	background-size: 30px;
+	line-height: 30px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	/*color: #352247;*/
+	/* #c97ba2 */
+}
