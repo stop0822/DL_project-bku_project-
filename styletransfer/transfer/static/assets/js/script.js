@@ -32,6 +32,7 @@ function selectForm(value){
     theForm = hiddenForms.getElementsByTagName("div");
 
     for(x=0; x<theForm.length; x++){
+        console.log(x)
         theForm[x].style.display = "none";
     }
 

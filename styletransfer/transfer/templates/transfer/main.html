@@ -32,15 +32,15 @@
 
 							<div id="allForms">
 								
-								{% for style_name in style_image_list %}
-									<div style="color: #000; width:200px; padding: 10px; display:none;">
-										{{ style_name }}
-										<img src="..\static\img\{{ style_name }}.jpg">
-										{{ style_name }}
+							{% for style_name in style_image_list %}
+								<div style="color: #000; width:200px; padding: 10px; display:none;">
+									{{ style_name }}
+									<img src="..\static\img\{{ style_name }}.jpg">
+									{{ style_name }}
 
-									</div>
-								{% endfor %}
 								</div>
+							{% endfor %}
+							</div>
 
 							<br>
 							
