@@ -30,6 +30,12 @@
 								{% endfor %}
 							</select>
 
+							<!-- 
+								현재 문제점!
+								div 이미지 img 추가하게 되면 js에서 매칭된 결과가
+								위에 있는 사진부터 하나씩 결과를 뿌려준다.
+								if문에 있는 theForm[x] 가 이상하게 작동하는 느낌.
+							 -->
 							<div id="allForms">
 								<div style="color: #000; width:200px; padding: 10px; display:none;">
 									<img src="..\static\img\Picasso.jpg">
