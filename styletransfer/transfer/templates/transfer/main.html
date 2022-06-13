@@ -3,111 +3,52 @@
 {% block content %}
 
 
-<div class="inner" align="center" style="background-color: #bfb4b67b;border-radius: 15px; height: 100%; width: 60%">
-	<div class="container" align="center" style="height: 100%; width: 100%; padding:50px">
+<div class="inner" align="center" style="background-color: #bfb4b67b;border-radius: 15px; height: 100%; width: 60%;">
+	<div class="container" align="center" style="height: 100%; width: 100%; margin-top:50px;">
 	<!-- <header> -->
 		<header>
 			<!--  -->
-			<!-- <div class="upload-box"> -->
-			<form method="post" action="" enctype="multipart/form-data">
-				{% csrf_token %}
-				<div class="row">
-					<div class="col-6" id="upload-box" style="width:32em;">
-						<input type="file" name="target_img" id="file-input" accept="image/png,image/jpeg" onchange="preview()">
-						<label for="file-input" style="color:white;">
-							<i class="bi bi-upload"></i> &nbsp; Choose A photo
-						</label>
-						<div id="images" style="height:300px"></div>
-						<!-- <script type="text/javascript" src="selet_file.js"></script> -->
-					</div>
+				<form method="post" action="" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="row">
+						<div class="col-6" id="upload-box" style="width:32em;">
+							<input type="file" name="target_img" id="file-input" accept="image/png,image/jpeg" onchange="preview()">
+							<label for="file-input" style="color:white;">
+								<i class="bi bi-upload"></i> &nbsp; Choose A photo
+							</label>
+							<div id="images" style="height:300px"></div>
+						</div>
 
-					<script src="{% static 'assets/js/script.js'%}"></script>
-					<div class="col-6" style="width:32em;">
-						<script>
-							function selectForm(value){
-								var hiddenForms = document.getElementById("allForms");
-					
-								// getElementsByTagName
-								// element의 집합을 가져오는 함수
-								theForm = hiddenForms.getElementsByTagName("div");
-
-								for(x=0; x<theForm.length; x++){
-									theForm[x].style.display = "none";
-								}
-
-								let arr;
-								arr = ['Picasso', 'boo', 'Rousseau', 'Seurat', 'Munch', 'ShinKwangho', 'Monet', 'Hwang', 'Gogh']
-
-								for (x=0; x<theForm.length; x++){
-									if (value==arr[x]){
-										theForm[x].style.display = "block";
-									}
-								}
-
-								document.getElementById("submit").disabled = false;
-							}
-						</script>
-						<div class="selectBox">
-							<select class="select" name="style_img" id="style_img" onchange="selectForm(value)" style="width:200; line-height:25px;">
-							<!-- <option value="none" hidden>입힐 스타일</option> -->
-								<option selected hidden>Choose Style</option>
-								<option value="Picasso">Picasso</option>
-								<option value="boo">boo</option>
-								<option value="Rousseau">Rousseau</option>
-								<option value="Seurat">Seurat</option>
-								<option value="Munch">Munch</option>
-								<option value="ShinKwangho">ShinKwangho</option>
-								<option value="Monet">Monet</option>
-								<option value="Hwang">Hwang</option>
-								<option value="Gogh">Gogh</option>
+						<script src="{% static 'assets/js/script.js' %}"></script>
+						<div class="col-6" style="width:32em;">
+							<select name="style_img" id="style_img" onchange="selectForm(value)" style=width:200>
+								<option>Choose Style</option>
+								{% for style_name in style_image_list %}
+								<option value="{{ style_name }}"> {{ style_name }} </option>
+								{% endfor %}
 							</select>
-						</div>
-						<div id="allForms">
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\Picasso.jpg">
-							</div>
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\boo.jpg">
-							</div>
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\Rousseau.jpg">
-							</div>
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\Seurat.jpg">
-							</div>
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\Munch.jpg">
-							</div>
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\ShinKwangho.jpg">
-							</div>
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\Monet.jpg">
-							</div>
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\Hwang.jpg">
-							</div>
-							<div id="images" style="color: #000;display:none;">
-								<img src="..\static\img\Gogh.jpg">
-							</div>
-						</div>
-						<br>
 
-						<br>
-						<br>
-					</div>
-				</div>
-					<button type="submit" id="submit" value="Transfer" onclick="loading_span()" disabled>Transfer</button>
-					
-					<loading >
-						<div class="loading"  id="load" style="display:none" >
-							<span></span>
-							<span></span>
-							<span></span>
+							<div id="allForms">
+								{% for style_name in style_image_list %}
+								<!-- div의 id 값은 js에서 display 해줄 때, if문에 사용 -->
+								<div id="{{ style_name }}" style="color: #000; width: 400px; height:300px; padding: 10px; display:none;">
+									<img id="display_style" src="..\static\img\{{ style_name }}.jpg">
+								</div>
+								{% endfor %}
+							</div>
+
+							<br>
+							
+
+							<br>
+							<br>
+
 						</div>
-					</loading>
-			</form>
-			<!-- </div> -->
+
+					</div>
+					<br>
+						<button type="submit" id="submit" value="Transfer" disabled>Transfer</button>
+				</form>
 			<!--  -->
 		</header>
 	</div>
