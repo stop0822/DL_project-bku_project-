@@ -50,4 +50,5 @@ function selectForm(value){
 
 function loading_span(){
     document.getElementById("load").style.display = "block";
+    document.getElementById("container_select").style.display = "none";
 }
