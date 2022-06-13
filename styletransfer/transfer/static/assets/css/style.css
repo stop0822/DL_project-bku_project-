@@ -44,7 +44,7 @@ label {
     margin: 20px 0 30px 0;
 }
 
-#images {
+#allForms > div {
     width:90%;
     position: relative;
     border: 1px solid black;
