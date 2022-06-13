@@ -139,3 +139,143 @@ body{
     50%{opacity:1; transform: scale(1.2);}  /*animation이 50%%움직였을때 원들의 크기를 1.2 크게 지정해준다*/ 
     100%{opacity: 0; transform: scale(0.5);}  /*animation이 100%움직였을때 원들의 크기를 0.5 로 다시 0%때와 같게 지정해준다*/ 
 }
+
+
+/* label {
+    display: block;
+    position: relative;
+    background-color: #DF7366;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    width:22em;
+    padding: 18px 0;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+/* selectbox css */
+/* .selectBox {
+    display: block;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.301);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    width: 22em;
+    height: 35px;
+    padding: 18px 0;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  .selectBox .select {
+    width: inherit;
+    height: inherit;
+    background: transparent;
+    border: 0 none;
+    outline: 0 none;
+    padding: 0 5px;
+    position: relative;
+    z-index: 3;
+  }
+  .selectBox .select option:hover {
+    background: lightcoral;
+    color: #fff;
+    padding: 3px 0;
+    font-size: 16px;
+  }
+  .selectBox .icoArrow {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    z-index: 1; 
+    width: 35px; 
+    height: inherit;
+    border-left: 2px solid lightcoral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .selectBox .icoArrow img {
+    width: 50%;
+    transition: .3s;
+  }
+  
+  .selectBox .select:focus + .icoArrow img {
+    transform: rotate(180deg);
+  } */
+
+
+
+.selectBox {
+background: rgba(255, 255, 255, 0.975);
+/* padding: 1em 1.25em 1em 1.25em; */
+line-height: 1em;
+width: 25em;
+height: auto;
+text-align: left;
+border-radius: 0.5em;
+box-shadow: 0 0.15em 0.25em 0 rgba(0, 0, 0, 0.25);
+min-width: 12em;
+list-style: none;
+}
+/* {
+    display: block;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.301);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    width: 22em;
+    height: 35px;
+    padding: 18px 0;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  } */
+
+.selectBox .select {
+    border-top: solid 1px rgba(128, 128, 128, 0.2);
+    color: #5b5b5b;
+    padding-left: 0;
+}
+
+    .selectBox .select:first-child {
+        border-top: 0;
+    }
+
+    .selectBox .select:hover {
+        color: #ef8376;
+    }
+
+    .selectBox .select a, .selectBox .select span {
+        display: block;
+        border: 0;
+        padding: 0.5em 0 0.5em 0;
+        -moz-transition: color 0.35s ease-in-out;
+        -webkit-transition: color 0.35s ease-in-out;
+        -ms-transition: color 0.35s ease-in-out;
+        transition: color 0.35s ease-in-out;
+    }
+
+.dropotron.level-0 {
+    margin-top: 2em;
+    font-size: 0.9em;
+}
+
+    .dropotron.level-0:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: -0.7em;
+        margin-left: -0.75em;
+        border-bottom: solid 0.75em rgba(255, 255, 255, 0.975);
+        border-left: solid 0.75em rgba(64, 64, 64, 0);
+        border-right: solid 0.75em rgba(64, 64, 64, 0);
+    }
