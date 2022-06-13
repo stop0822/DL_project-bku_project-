@@ -28,21 +28,22 @@ function selectForm(value){
     var hiddenForms = document.getElementById("allForms");
 
     // getElementsByTagName
-    // element의 집합을 가져오는 함수 => HTMLCollection 리턴
+    // element의 집합을 가져오는 함수
     theForm = hiddenForms.getElementsByTagName("div");
 
-    // Choose Style 에서 이미지 안보이게 해준다.
     for(x=0; x<theForm.length; x++){
-        theForm[x].style.display = "none"; // property 방식
+        console.log(x)
+        theForm[x].style.display = "none";
     }
 
-    // selectbox에서 선택한 value값을 theForm[x].id 값과 비교해서 같은 사진을 display 해준다.
+    let arr;
+    // arr = ['boo.jpg', 'Gogh.jpg', 'Hwang.jpg', 'Manet.jpg', 'Monet.jpg', 'Munch.jpg', 'Picasso.jpg', 'Rousseau.jpg', 'Seurat.jpg', 'ShinKwangho.jpg']
+    arr = ['boo', 'Gogh', 'Hwang', 'Manet', 'Monet', 'Munch', 'Picasso', 'Rousseau', 'Seurat', 'ShinKwangho']
     for (x=0; x<theForm.length; x++){
-        if (value==theForm[x].id){
-            theForm[x].style.display = "block"; // property 방식
+        if (value==arr[x]){
+            theForm[x].style.display = "block";
         }
     }
-
 
     document.getElementById("submit").disabled = false;
 }
