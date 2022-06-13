@@ -27,23 +27,47 @@ function preview(){
 let styleInput = document.getElementById("style_img");
 let styleimageContainer = document.getElementById("st_images");
 
-function style_preview(){
-    // imageContainer.innerHTML = "";
+// 지워도 되는 코드?????
+// function style_preview(){
+//     // imageContainer.innerHTML = "";
 
-    // for (i of styleInput.files){
-    //     let reader = new FileReader();
-    //     let figure = document.createElement("figure");
-    //     let figCap = document.createElement("figcaption");
-    //     figCap.innerText = i.name;
-    //     figure.appendChild(figCap);
-    //     reader.onload=()=>{
-    //         let img = document.createElement("img");
-    //         img.setAttribute("src",reader.result);
-    //         figure.insertBefore(img,figCap);
-    //     }
-    //     styleimageContainer.appendChild(figure);
-    //     reader.readAsDataURL(i);
-    // } 
+//     // for (i of styleInput.files){
+//     //     let reader = new FileReader();
+//     //     let figure = document.createElement("figure");
+//     //     let figCap = document.createElement("figcaption");
+//     //     figCap.innerText = i.name;
+//     //     figure.appendChild(figCap);
+//     //     reader.onload=()=>{
+//     //         let img = document.createElement("img");
+//     //         img.setAttribute("src",reader.result);
+//     //         figure.insertBefore(img,figCap);
+//     //     }
+//     //     styleimageContainer.appendChild(figure);
+//     //     reader.readAsDataURL(i);
+//     // } 
+//     document.getElementById("submit").disabled = false;
+// }
+
+function selectForm(value){
+    var hiddenForms = document.getElementById("allForms");
+
+    // getElementsByTagName
+    // element의 집합을 가져오는 함수 => HTMLCollection 리턴
+    theForm = hiddenForms.getElementsByTagName("div");
+
+    // Choose Style 에서 이미지 안보이게 해준다.
+    for(x=0; x<theForm.length; x++){
+        theForm[x].style.display = "none"; // property 방식
+    }
+
+    // selectbox에서 선택한 value값을 theForm[x].id 값과 비교해서 같은 사진을 display 해준다.
+    for (x=0; x<theForm.length; x++){
+        if (value==theForm[x].id){
+            theForm[x].style.display = "block"; // property 방식
+        }
+    }
+
+
     document.getElementById("submit").disabled = false;
 }
 
