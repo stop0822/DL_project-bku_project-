@@ -63,7 +63,7 @@ Functional API를 통해 모델을 정의하면 입력과 출력을 정의할 �
 
 
 <br>
-<h3>🔷 타겟이미지         🔷 스타일 이미지        🔷 생성이미지 </h3>
+<h3>🔷 타겟이미지       🔷 스타일 이미지        🔷 생성이미지 </h3>
 <p align="left">
   <img style="float: left; width:260px; height:290px;" src="https://user-images.githubusercontent.com/100271594/173271335-299e76bd-f07a-48b5-97c8-3931aadd120b.jpg"/>
   <img style="float: center; width:260px; height:290px;" src="https://user-images.githubusercontent.com/100271594/173271549-f9c53c2d-5836-45e5-b67c-f42bb4fd0d1f.jpg"/>
