@@ -31,8 +31,21 @@ def index(request):
         return redirect("/result/" + file_prefix)
 
 
+    # if request.method == 'GET':
+    #     return render(request,'main.html')
     if request.method == 'GET':
-        return render(request,'main.html')
+        # style 이미지의 이름만 가져오기
+        style_image_list = os.listdir(style_image_base_path) # style 이미지 파일 리스트
+        style_image_list = "".join(style_image_list)         # style 이미지 파일 이름들을 string 한줄로 합치기
+        style_image_list = style_image_list.split('.jpg')    # style 이미지 .jpg 기준으로 split
+        style_image_list = style_image_list[:-1]             # split() 된 list의 마지막 항목이 '' 으로 남아있으므로, 인덱싱으로 제외시키고 가져온다.
+
+        # context를 이용해서 style_image_list를 templates에 넘겨준다.
+        # dictionary의 key 값을 template의 jinja에서 찾는다.
+        # dictionary의 value 값을 key로 찾은 templates에 넣어준다.
+        # 따라서, template에 있는 style_image_list 라는 곳에
+        # 'style 이미지의 이름만 가져오기'에서 만든 파이썬 변수인 style_image_list를 사용한다.
+        return render(request,'main.html', {'style_image_list' : style_image_list})
 
 
 def result(request,folder):
