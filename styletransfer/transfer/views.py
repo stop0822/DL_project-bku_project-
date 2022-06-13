@@ -1,5 +1,6 @@
 from sqlite3 import Time
 from statistics import mode
+from turtle import st
 from django.shortcuts import render, redirect
 import os
 from PIL import Image
@@ -29,7 +30,7 @@ def index(request):
         
 
         return redirect("/result/" + file_prefix)
-
+        
 
     # if request.method == 'GET':
     #     return render(request,'main.html')

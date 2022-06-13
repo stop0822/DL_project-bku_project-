@@ -24,8 +24,8 @@ function preview(){
 }
 
 
-let styleInput = document.getElementById("style_img");
-let styleimageContainer = document.getElementById("st_images");
+function selectForm(value){
+    var hiddenForms = document.getElementById("allForms")};
 
 // 지워도 되는 코드?????
 // function style_preview(){
