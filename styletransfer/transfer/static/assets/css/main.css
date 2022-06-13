@@ -1961,7 +1961,7 @@ input, select, textarea {
 		width: 22em;
 		font-weight: bold;
 		border-radius: 5px;
-		margin: auto;
+		margin: 0 0 18px;
 		/* border: solid 1px black; */
 		padding: 18px 0;
 		text-align: center;
@@ -2295,6 +2295,10 @@ input, select, textarea {
 		padding: 1.5em 0 1.5em 0;
 		z-index: 1;
 		overflow: hidden;
+	}
+	
+	#nav > ul >li > a:hover {
+		color: #DF7366;
 	}
 
 		#nav > ul {
@@ -3140,7 +3144,6 @@ input, select, textarea {
 						margin-bottom: 2em;
 					}
 
-<<<<<<< HEAD
 	}
 
 
@@ -3159,21 +3162,19 @@ input, select, textarea {
 
 .card-body {
 	background-color: #bfb4b67b;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> root/main
 }
 
 /* README page h2 */
 #boldtitle {
 	font-weight: bold;
-<<<<<<< HEAD
-=======
->>>>>>> e86d4ace24be77c4059e6994687d78ce82f4f459
-=======
->>>>>>> root/main
 }
-=======
-	}
->>>>>>> parent of d1beee3 (readme + developer)
+
+#move footer h1:hover {
+	background: -webkit-linear-gradient(#eee, #bfb4b67b);
+	background-size: 30px;
+	line-height: 30px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	/*color: #352247;*/
+	/* #c97ba2 */
+}
