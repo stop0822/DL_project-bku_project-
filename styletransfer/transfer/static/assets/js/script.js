@@ -46,3 +46,8 @@ function selectForm(value){
 
     document.getElementById("submit").disabled = false;
 }
+
+
+function loading_span(){
+    document.getElementById("load").style.display = "block";
+}
