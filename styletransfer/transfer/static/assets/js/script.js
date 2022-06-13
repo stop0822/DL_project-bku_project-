@@ -48,3 +48,6 @@ function style_preview(){
 }
 
 
+function loading_span(){
+    document.getElementById("load").style.display = "block";
+}

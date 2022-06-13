@@ -1961,7 +1961,7 @@ input, select, textarea {
 		width: 22em;
 		font-weight: bold;
 		border-radius: 5px;
-		margin: auto;
+		margin: 0 0 18px;
 		/* border: solid 1px black; */
 		padding: 18px 0;
 		text-align: center;
@@ -2295,6 +2295,10 @@ input, select, textarea {
 		padding: 1.5em 0 1.5em 0;
 		z-index: 1;
 		overflow: hidden;
+	}
+	
+	#nav > ul >li > a:hover {
+		color: #DF7366;
 	}
 
 		#nav > ul {
@@ -3163,4 +3167,14 @@ input, select, textarea {
 /* README page h2 */
 #boldtitle {
 	font-weight: bold;
+}
+
+#move footer h1:hover {
+	background: -webkit-linear-gradient(#eee, #bfb4b67b);
+	background-size: 30px;
+	line-height: 30px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	/*color: #352247;*/
+	/* #c97ba2 */
 }
