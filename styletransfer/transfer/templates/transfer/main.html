@@ -23,7 +23,7 @@
 						<script src="{% static 'assets/js/script.js' %}"></script>
 						<div class="col-6 selectBox" style="width:32em;">
 							<select name="style_img" id="style_img" style="line-height:25px;" onchange="selectForm(value)">
-								<option>Choose Style</option>
+								<option selected hidden>Choose Style</option>
 								{% for style_name in style_image_list %}
 								<option value="{{ style_name }}"> {{ style_name }} </option>
 								{% endfor %}
