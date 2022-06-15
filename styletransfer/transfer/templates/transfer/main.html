@@ -3,29 +3,33 @@
 {% block content %}
 
 
+<<<<<<< HEAD
 
 <div class="inner" align="center" style="background-color: #bfb4b67b;border-radius: 15px; height: 100%; width: 60%">
 	<div class="container" align="center" style="height: 100%; width: 100%;">
+=======
+<div class="inner" align="center" style="background-color: #bfb4b67b;border-radius: 15px; height: 100%; width: 60%;">
+		<img src=" {% static 'images/loading.gif' %}" id="load" style="width: 100%; height: 100%;border-radius: 15px; display:none;">
+	<div class="container" align="center" id="container_select" style=" margin-top:50px;display:block">
+>>>>>>> root/main
 	<!-- <header> -->
 		<header>
 			<!--  -->
-			<!-- <div class="upload-box"> -->
 				<form method="post" action="" enctype="multipart/form-data">
 					{% csrf_token %}
 					<div class="row">
-						<div class="col-6" id="upload-box" style="width:32em; margin-right: 5%; margin-left: -5%;">
+						<div class="col-6" id="upload-box" style="width:32em;height: 35em;">
 							<input type="file" name="target_img" id="file-input" accept="image/png,image/jpeg" onchange="preview()">
 							<label for="file-input" style="color:white;">
 								<i class="bi bi-upload"></i> &nbsp; Choose A photo
 							</label>
 							<div id="images" style="height:300px"></div>
-							<!-- <script type="text/javascript" src="selet_file.js"></script> -->
 						</div>
 
 						<script src="{% static 'assets/js/script.js' %}"></script>
-						<div class="col-6" style="width:32em;">
-							<select name="style_img" id="style_img" onchange="selectForm(value)" style=width:200>
-								<option>Choose Style</option>
+						<div class="col-6 selectBox" style="width:32em;">
+							<select name="style_img" id="style_img" style="line-height:25px;" onchange="selectForm(value)">
+								<option selected hidden>Choose Style</option>
 								{% for style_name in style_image_list %}
 								<option value="{{ style_name }}"> {{ style_name }} </option>
 								{% endfor %}
@@ -35,7 +39,7 @@
 								{% for style_name in style_image_list %}
 								<!-- div의 id 값은 js에서 display 해줄 때, if문에 사용 -->
 								<div id="{{ style_name }}" style="color: #000; width: 400px; height:300px; padding: 10px; display:none;">
-									<img src="..\static\img\{{ style_name }}.jpg">
+									<img id="display_style" src="..\static\img\{{ style_name }}.jpg">
 								</div>
 								{% endfor %}
 							</div>
@@ -46,14 +50,19 @@
 							<br>
 							<br>
 
-							<button type="submit" id="submit" value="Transfer" disabled>Transfer</button>
 						</div>
+
 					</div>
+					<br>
+						<button type="submit" id="submit" value="Transfer"onclick="loading_span()">Transfer</button>
 				</form>
-			<!-- </div> -->
 			<!--  -->
 		</header>
 	</div>
+	
+	<!-- <div id="div_load_image" style="width: 500px; height: 500px6; position:absolute; top:0%; left:0%; z-index:9999; opacity:alpha*0.5;text-align:center" disabled>
+		<img src=" {% static 'images/loading5.gif' %}" id="load" style="width: 100%; height: 100%; display:block">
+	</div> -->
 </div>
 	<!-- Nav -->
 	<nav id="nav">

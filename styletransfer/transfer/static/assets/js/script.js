@@ -25,30 +25,6 @@ function preview(){
 
 
 function selectForm(value){
-    var hiddenForms = document.getElementById("allForms")};
-
-// 지워도 되는 코드?????
-// function style_preview(){
-//     // imageContainer.innerHTML = "";
-
-//     // for (i of styleInput.files){
-//     //     let reader = new FileReader();
-//     //     let figure = document.createElement("figure");
-//     //     let figCap = document.createElement("figcaption");
-//     //     figCap.innerText = i.name;
-//     //     figure.appendChild(figCap);
-//     //     reader.onload=()=>{
-//     //         let img = document.createElement("img");
-//     //         img.setAttribute("src",reader.result);
-//     //         figure.insertBefore(img,figCap);
-//     //     }
-//     //     styleimageContainer.appendChild(figure);
-//     //     reader.readAsDataURL(i);
-//     // } 
-//     document.getElementById("submit").disabled = false;
-// }
-
-function selectForm(value){
     var hiddenForms = document.getElementById("allForms");
 
     // getElementsByTagName
@@ -74,4 +50,5 @@ function selectForm(value){
 
 function loading_span(){
     document.getElementById("load").style.display = "block";
+    document.getElementById("container_select").style.display = "none";
 }

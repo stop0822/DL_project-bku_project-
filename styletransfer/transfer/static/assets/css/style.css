@@ -9,7 +9,6 @@ body {
 }
 
 .inner.container {
-    /* background-color: #ffffff; */
     width:60%;
     min-width: 450px;
     position: relative;
@@ -44,10 +43,10 @@ label {
     margin: 20px 0 30px 0;
 }
 
-#allForms > div {
-    width:90%;
+#display_style {
+    width: auto;
+    height: 17em;
     position: relative;
-    border: 1px solid black;
     margin: auto;
     display: flex;
     justify-content: space-evenly;
@@ -55,21 +54,18 @@ label {
     flex-wrap: wrap;
 }
 
-#st_images {
-    width:100%;
-    height: 100%;
-    position: relative;
-    border: 1px solid black;
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    flex-wrap: wrap;
-}
 
 figure {
-    width: 100%
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 300px; 
+    height:200px;
 }
+
 
 img {
     width: 100%
@@ -80,16 +76,12 @@ figcaption {
     font-size: 2.4vmin;
     margin-top: 0.5vmin;
 }
-/* 
-#file-input {
-    align-items: center;
-} */
 
 #upload-box {
     border-right-style : double;
     border-right-color: #5b5b5b;
     border-right-width: 3px;
-    height: 630px;
+    height: 200px;
 }
 
 
@@ -97,45 +89,3 @@ figcaption {
 
 
 
-
-/* loading practice */
-
-
-
-/* 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-} */
-/*로딩 애니메이션을 브라우저의 정 가운데에 놓기 위해 body에 가운데로 올 수 있게 설정을 해주었다*/
-
-.loading span{
-    width: 20px;height: 20px; /*span자체에 w와 h값을 준 후 radius값을 주어 원모양 3개를 만들어 주었다*/
-    background: gray;
-    display: inline-block; /*span은 inline이다 inline은 크기값을 지정해 줄 수 없기 때문에 inline-block으로 설정해준다 */
-    border-radius: 50%;
-    animation: loading 1s linear infinite; /*원들이 움직일 수 있게 animation을 설정해 주었다. 1초(loading 1s)동안
-                                             keyframes간에 부드럽게 넘어갈 수 있게(linear) 
-                                             무한(infinite)으로 움직이게 설정해준다*/
-}
-
-.loading span:nth-child(1){
-    animation-delay: 0s;  /*차례대로 움직일 수 있게 delay를 설정해준다. 첫번째 원은 delay없이 바로 움직인다*/
-    background: rgb(4, 71, 4);
-}
-.loading span:nth-child(2){
-    animation-delay: 0.2s; /*두번째 원은 delay를 0.2초 주어 0.2초 후 움직인다*/
-    background: rgb(24, 180, 24);
-}
-.loading span:nth-child(3){
-    animation-delay: 0.4s;  /*세번째 원은 delay를 0.4초 주어 0.4초 후 움직인다*/
-    background: rgb(174, 236, 174);
-}
-
-@keyframes loading{   /**/
-    0%{opacity: 0; transform: scale(0.5);}  /*animation이 0%움직였을때 원들의 크기를 0.5 크게 지정해준다*/ 
-    50%{opacity:1; transform: scale(1.2);}  /*animation이 50%%움직였을때 원들의 크기를 1.2 크게 지정해준다*/ 
-    100%{opacity: 0; transform: scale(0.5);}  /*animation이 100%움직였을때 원들의 크기를 0.5 로 다시 0%때와 같게 지정해준다*/ 
-}

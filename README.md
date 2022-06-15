@@ -63,11 +63,11 @@ Functional API를 통해 모델을 정의하면 입력과 출력을 정의할 �
 
 
 <br>
-<h3>  🔷 타겟이미지            🔷 스타일 이미지      🔷 생성이미지 </h3>
-<p align="center">
-  <img style="float: left; height:300px;" src="https://user-images.githubusercontent.com/100271594/173271335-299e76bd-f07a-48b5-97c8-3931aadd120b.jpg"/>
-  <img style="float: center; height:300px;" src="https://user-images.githubusercontent.com/100271594/173271549-f9c53c2d-5836-45e5-b67c-f42bb4fd0d1f.jpg"/>
-  <img style="float: right; height:300px;" src="https://user-images.githubusercontent.com/100271594/173271564-1de600d3-9a80-4129-bf4d-8e4fbc46dee5.png"/>
+<h3>🔷 타겟이미지       🔷 스타일 이미지        🔷 생성이미지 </h3>
+<p align="left">
+  <img style="float: left; width:260px; height:290px;" src="https://user-images.githubusercontent.com/100271594/173271335-299e76bd-f07a-48b5-97c8-3931aadd120b.jpg"/>
+  <img style="float: center; width:260px; height:290px;" src="https://user-images.githubusercontent.com/100271594/173271549-f9c53c2d-5836-45e5-b67c-f42bb4fd0d1f.jpg"/>
+  <img style="float: right; width:260px; height:290px;" src="https://user-images.githubusercontent.com/100271594/173271564-1de600d3-9a80-4129-bf4d-8e4fbc46dee5.png"/>
 </p>
 <br>
 
@@ -85,6 +85,6 @@ pretrained model을 활용해 얼굴인식 및 이미지상에서의 coordinate�
 <br>
 <h3> 🔷 필터적용 </h3>
 <p>
-  <img style="height:500px;" src="https://user-images.githubusercontent.com/100271594/173271573-7f21eb3f-3e07-417a-9be4-3ed1d92793b3.png"/>
+  <img style="height:500px;" src="https://user-images.githubusercontent.com/100271594/173294188-fcccb531-a4c8-43ff-bb75-590d844e38ed.png"/>
 </p>
 <br>

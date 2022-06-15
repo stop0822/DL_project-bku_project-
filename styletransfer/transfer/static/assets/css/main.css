@@ -2378,7 +2378,7 @@ input, select, textarea {
 			border-top: solid 1px rgba(128, 128, 128, 0.2);
 			color: #5b5b5b;
 			padding-left: 0;
-		}
+		}line-height
 
 			.dropotron li:first-child {
 				border-top: 0;
@@ -3169,12 +3169,13 @@ input, select, textarea {
 	font-weight: bold;
 }
 
+/* Home page button */
 #move footer h1:hover {
 	background: -webkit-linear-gradient(#eee, #bfb4b67b);
 	background-size: 30px;
 	line-height: 30px;
+	background-position:bottom;
+	vertical-align:text-bottom;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	/*color: #352247;*/
-	/* #c97ba2 */
 }
